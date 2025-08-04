@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function student(user){
+            let {
+                name,
+                age,
+                listMonhoc={}
+            }=user
+            let count=0,sum=0,best=listMonhoc[0],weakest=listMonhoc[0]
+            listMonhoc.forEach(e => {
+                count++
+                sum+=e.score
+                if(best.score>e.score) best=e
+                if(weakest.score<e.score) weakest=e
+            });
+            let score=sum/count
+            if(score>=8.5){
+                classification='Hoc sinh gioi'
+            }else if(score>=7){
+                classification='Hoc sinh kha'
+            }else if(score >=5){
+                classification='Hoc sinh trung binh'
+            }else{
+                classification='Hoc sinh yeu'
+            }
+
+            return `${user.name} is ${user.age} years old.
+            Average score: ${score} -> ${classification}
+            Best subject: ${best.subject} (${best.score})
+            Weakest subject: ${weakest.subject} (${weakest.score})`
+        }
+        let user={
+            name:'Dev',
+            age:20,
+            listMonhoc:[
+                {subject:'Math',score:9},
+                {subject:'English',score:7.5},
+                {subject:'Physics',score:6},
+                {subject:'literature',score:8.5}
+            ]
+        }
+        console.log(student(user))
+    </script>
+</body>
+</html>

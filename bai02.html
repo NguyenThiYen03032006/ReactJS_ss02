@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function greetingWithReather(name, weather){
+            if(weather=='sunny') return `Chao ${name}! Hom nay troi nang tuyet voi!`
+            if (weather=='rainy') return `Chao ${name}! Hom nay troi mua, hay mang theo o!`
+            return `Chao ${name}! Hom nay thoi tiet khong xac dinh.`
+        }
+        console.log(greetingWithReather("Nguyen An", "sunny"))
+        console.log(greetingWithReather("Le Nam", "rainy"))
+        console.log(greetingWithReather("Tran Tam", "cloudy"))
+    </script>
+</body>
+</html>
